@@ -1,12 +1,28 @@
-import { useState } from "react";
-
 import "./App.css";
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import About from './pages/About'
+import SignIn from './pages/SignIn'
+import SignUP from './pages/SignUp'
+
+import Dashboard from './pages/Dashboard'
+import Projects from './pages/Projects'
+
 
 function App() {
   return (
-    <div>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/sign-in" element={<SignIn />} />
+        <Route path="/sign-up" element={<SignUP />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/projects" element={<Projects />} />
+        
+      </Routes>
+        
+    </BrowserRouter>
   );
 }
 
